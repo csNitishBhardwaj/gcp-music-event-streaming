@@ -29,7 +29,7 @@ echo '' >> ~/.bashrc
 echo 'export SPARK_HOME="${HOME}/spark/spark-3.5.3-bin-hadoop3"' >> ~/.bashrc
 echo 'export PATH="${SPARK_HOME}/bin:${PATH}"' >> ~/.bashrc
 
-eval "$(cat ~./bashrc | tail -n +10)"
+eval "$(cat ~/.bashrc | tail -n +10)"
 
 echo "Setting Pyspark ..."
 py4j="$(basename ${SPARK_HOME}/python/lin/py4j*)"
