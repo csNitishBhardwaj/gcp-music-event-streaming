@@ -1,4 +1,4 @@
-cd ~/gcp-music-streaming/eventsim
+cd ~/gcp-music-event-streaming/eventsim
 
 echo "Building Eventsim Image ..."
 docker build -t events:1.0 .
