@@ -26,7 +26,7 @@ sudo apt-get update
 echo "Installing Docker ..."
 sudo apt-get -y install docker.io
 
-echo "Setiing Docker to run without sudo..."
+echo "Setting Docker to run without sudo..."
 sudo groupadd docker
 sudo gpasswd -a $USER docker
 sudo service docker restart
