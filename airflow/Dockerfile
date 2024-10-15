@@ -11,7 +11,7 @@ RUN pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-SHELL [ "/bin/bash", "-o", "pipefail", "-e", "-u", "-x", "-c" ]
+SHELL ["/bin/bash", "-o", "pipefail", "-e", "-u", "-x", "-c"]
 
 ARG CLOUD_SDK_VERSION=495.0.0
 ENV GCLOUD_HOME=/home/google-cloud-sdk

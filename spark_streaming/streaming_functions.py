@@ -34,8 +34,10 @@ def create_kafka_read_stream(spark, kafka_address, kafka_port, topic, starting_o
 def process_stream(stream, stream_schema, topic):
     stream = stream \
                 .selectExpr("CAST(value AS STRING)") \
-                .select(from_json("value"), stream_schema) \
-                .alias("data") \
+                .select(
+                        from_json(col("value"), stream_schema)
+                        .alias("data")
+                        ) \
                 .select("data.*")
 
     # Add month, day, hour to split data into seperate directories      
