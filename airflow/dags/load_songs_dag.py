@@ -50,15 +50,15 @@ with DAG(
     default_args = default_args,
     description = f'One time Execution to create songs table in bigquery',
     schedule_interval = '@once',
-    start_date = datetime(2024,10,8),
-    end_date = datetime(2024,10,8),
+    start_date = datetime(2024,10,16,16),
+    end_date = datetime(2024,10,16),
     catchup = True,
     tags = ['music_stream']
 ) as dag:
 
     download_songs_file_task = BashOperator(
         task_id = "download_songs_file",
-        bash_command = f"curl - sSLF {URL} > {CSV_OUTFILE}"
+        bash_command = f"curl -sSL {URL} > {CSV_OUTFILE}"
     )
 
     convert_to_parquet_task = PythonOperator(
